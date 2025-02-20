@@ -32,3 +32,17 @@ function validatePassword(string1, string2) {
         return false;
     }
 }// End of function validatePassword(string1, string2)
+
+
+function passwordReverser(string) {
+    let stringLengthMiddle = (string.length) / 2;
+    let charTempHolder = "";
+
+    for (let i = 0; i < stringLengthMiddle; i++){
+        charTempHolder = string[i];
+        string[i] = string[string.length-1-i];
+        string[string.length-1-i] = charTempHolder;
+    }
+
+    return string;
+}
