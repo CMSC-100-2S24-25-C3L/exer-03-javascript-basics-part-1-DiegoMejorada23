@@ -6,7 +6,7 @@
 // Simulate a password validation program in JavaScript
 
 function validatePassword(string1, string2) {
-    if ((string1 === string2) && (string.length >= 8)) {
+    if ((string1 === string2) && (string1.length >= 8)) {
         let hasNumber = false;
         let hasUpperCase = false;
         let hasLowerCase = false;
@@ -35,14 +35,35 @@ function validatePassword(string1, string2) {
 
 
 function passwordReverser(string) {
-    let stringLengthMiddle = (string.length) / 2;
-    let charTempHolder = "";
+    let reversedString = "";
 
-    for (let i = 0; i < stringLengthMiddle; i++){
-        charTempHolder = string[i];
-        string[i] = string[string.length-1-i];
-        string[string.length-1-i] = charTempHolder;
+    for (let i = 0; i < string.length; i++){
+        reversedString = reversedString + string[string.length-1-i]
     }
 
-    return string;
-}
+    return reversedString;
+}// End of function passwordReverser(string)
+
+
+function storePassword(stringName, pw1, pw2) {
+    if (validatePassword(pw1, pw2)) {
+        let object = {
+            name: stringName,
+            newpassword: passwordReverser(pw1)
+        }
+
+        return object;
+    } else {
+        let object = {
+            name: stringName,
+            newpassword: pw1
+        }
+
+        return object;
+    }
+}// End of function storePassword(stringName, pw1, pw2)
+
+
+// Sample Run
+console.log(storePassword("John", "Pass1234", "Pass1234"));
+console.log(storePassword("Johnny", "Pass123", "Pass12345"));
