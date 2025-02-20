@@ -6,5 +6,5 @@ Diego Villaranda Mejorada
 Degree Program:
 BS Computer Science
 
-What are my key takeaways from this exercise?
+What are my key takeaways from this exercise?:
 My key takeaways in this exercise are how to edit a string using its index. This is from the function 'stringReverser', because my first solution here was a faster solution than for looping the whole string which is accessing the first and last index and swapping them and repeat until it reaches the middle. I tried swapping them by using a temporary character holder and exchange its values. But it failed when I tried to run it, so I sticked with for looping the whole string in the end.
